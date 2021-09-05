@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es5",
+        "strict": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "inlineSourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "declaration": false,
+        "lib": [ "dom", "es2015" ],
+        "types": [ "vuetify" ],
+    },
+    "include": [
+        "resources/js/**/*"
+    ],
+    "exclude": ["node_modules"]
+}

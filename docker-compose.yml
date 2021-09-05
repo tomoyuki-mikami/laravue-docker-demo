@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  php:
+    container_name: php
+    build: ./docker/php
+    command: bash -c "php artisan serve --host 0.0.0.0"
+    ports:
+      - 8000:8000
+      - 8080:8080
+    volumes:
+      - ./laravue:/var/www
+
+  db:
+    image: postgres:latest
+    container_name: db-host
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      PGPASSWORD: docker
+      POSTGRES_DB: laravue
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./docker/db/data:/var/lib/postgresql/data
+      - ./docker/db/init:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
